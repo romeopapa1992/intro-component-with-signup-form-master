@@ -16,6 +16,7 @@ body {
     padding: 100px 0;
     
     }
+
 main {
     display: grid;
     grid-template-rows: auto;
@@ -26,9 +27,9 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     align-items: center;
-    padding: 50px;
+	padding-left: 70px;
 }
 
 h1 {
@@ -40,10 +41,11 @@ h1 {
 
 h2 {
 	color: white;
-	font-size: 0.9rem;
+	font-size: 1rem;
     font-weight: normal;
 	line-height: 1.2rem;
-    text-align: left;
+	text-align: left;
+
 }
 
 .card {
@@ -51,33 +53,29 @@ h2 {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    width: 100%;
 }
 
-.top-card {
+.top-card, form {
 	background-color: hsl(248, 32%, 49%);
 	color: white;
 	padding: 15px;
 	border-radius: 15px;
-	box-shadow: 0 8px hsla(260, 3%, 35%, 0.404);
+	box-shadow: 0 7px hsla(249, 10%, 26%, 0.404);
 	margin-bottom: 30px;
-    width: 72%;
+	width: 67%;
 }
 
-
 form {
-    background-color: white;
-	padding: 40px;
-	border-radius: 15px;
-	box-shadow: 0 8px hsla(260, 3%, 35%, 0.404);
-    width: 72%;
+	background-color: white;
+	padding: 35px;
 }
 
 .fields {
 	margin-bottom: 15px;
+	position: relative;
 }
 
-input, button {
+input, button[class = claim] {
 	width: 100%;
 	height: 60px;
 	margin-bottom: 5px;
@@ -90,17 +88,7 @@ input, button {
 	font-weight: 600;
 }
 
-/*.card input:focus {
-	border: 1.5px solid hsl(249, 10%, 26%);
-}
-.card input::placeholder {
-	color: hsla(249, 10%, 26%, 0.678);
-	font-family: 'Poppins', sans-serif;
-	font-size: 1.1rem;
-	font-weight: 600;
-}*/
-
-.trial {
+button[class = claim] {
 	cursor: pointer;
 	background-color: hsl(154, 59%, 51%);
 	box-shadow: 0px 4px hsl(154, 56%, 44%);
@@ -109,22 +97,50 @@ input, button {
     color: white;
     border: none;
     letter-spacing: 1px;
+	margin-bottom: 15px;
 }
-.trial:hover {
-	background-color: hsl(154, 73%, 65%);
+
+.card input:focus {
+	border: 1.5px solid hsl(249, 10%, 26%);
 }
-.card p{
-	margin-top: 10px;
+
+span {
+	margin-top: 20px;
 	color: hsl(246, 25%, 77%);
     font-size: 0.8rem;
 }
 
-.card p b{
+span b {
 	color: hsl(0, 100%, 74%);
 }
 
-.fields p, label, img {
-	display: none;
+.claim:hover {
+	background-color: hsl(154, 73%, 65%);
+}
+
+.error-text {
+	color: hsl(0, 100%, 74%);
+	text-align: right;
+	margin-top: 10px;
+	font-size: .8rem;
+	font-style: italic;
+	font-weight: 500;
+}
+
+.error-icon {
+	position: absolute;
+	top: 0;
+	right: 20px;
+	top: 28%;
+}
+
+input.error ~ img.error-icon,
+input.error ~ p.error-text {
+	display: block;
+  }
+  
+input.error {
+	border: 2px solid hsl(0, 100%, 74%); 
 }
 
 footer {
@@ -132,25 +148,9 @@ footer {
 }
 
 
-@media (max-width: 650px) {
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    main {
-        grid-template-columns: 1fr;
-    }
-}  
-
-
-
-
-
-
-
+.error-text, label, img {
+	display: none;
+}
 
 .attribution { 
     font-size: 11px; text-align: center; 
@@ -160,3 +160,65 @@ footer {
     color: hsl(228, 45%, 44%); 
 }
 
+@media (max-width: 500px) {
+	body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	  	justify-content: center;
+		background-image: url(./images/bg-intro-mobile.png);
+    	background-color: hsl(0, 100%, 74%);
+		height: 100%;
+		
+	  }
+
+	main {
+	  grid-template-columns: 1fr;
+	}
+
+	.top-card {
+		margin-top: 15px;
+		margin-bottom: 15px;
+		width: 90%;
+		
+	}
+
+  .intro {
+	text-align: center;
+	padding-left: 0;
+  }
+
+  form {
+	padding: 15px;
+	width: 90%;
+  }
+  h1 {
+	margin-bottom: 10px;
+  }
+
+  h2 {
+	font-size: small;
+  }
+
+  .top-card p {
+	font-size: small;
+  }
+
+  ::placeholder {
+	font-size: small;
+  }
+
+  input {
+	height: 50px;
+  }
+
+  button[class = claim] {
+	font-size: 12px;
+	height: 50px;
+  }
+
+  span {
+		font-size: 0.55rem
+  }
+
+}

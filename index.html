@@ -22,38 +22,39 @@
 
     <div class="card">
       <div class="top-card">
-      <span><b>Try it free 7 days</b> then $20/mo. thereafter</span>
+      <p><b>Try it free 7 days</b> then $20/mo. thereafter</p>
       </div>
       <form>
         <div class="fields">
           <label for="firstName">First Name</label>
           <input type="text" name="firstName" id="firstName" placeholder="First Name">
-          <img src="./images/icon-error.svg" alt="icon error">
-          <p>First name cannot be empty</p>
+          <img src="./images/icon-error.svg" class="error-icon" alt="icon error">
+          <p class="error-text">First name cannot be empty</p>
         </div>
         <div class="fields">
           <label for="lastName">Last Name</label>
           <input type="text" name="lastName" id="lastName" placeholder="Last Name">
-          <img src="./images/icon-error.svg" alt="icon error">
-          <p>Last name cannot be empty</p>
+          <img src="./images/icon-error.svg" class="error-icon" alt="icon error">
+          <p class="error-text">Last name cannot be empty</p>
         </div>
         <div class="fields">
           <label for="email">Email Address</label>
           <input type="text" name="email" id="email" placeholder="Email Address">
-          <img src="./images/icon-error.svg" alt="icon error">
-          <p>Looks like this is not an email</p>
+          <img src="./images/icon-error.svg" class="error-icon" alt="icon error">
+          <p class="error-text">Looks like this is not an email</p>
         </div>
         <div class="fields">
           <label for="password">Password</label>
-          <input type="text" name="password" id="password" placeholder="Password">
-          <img src="./images/icon-error.svg" alt="icon error">
-          <p>Password cannot be empty</p>
+          <input type="password" name="password" id="password" placeholder="Password">
+          <img src="./images/icon-error.svg" class="error-icon" alt="icon error">
+          <p class="error-text">Password cannot be empty</p>
         </div>
-        <button class="trial">Claim your free trial</button>
-        <p>By clicking the button, you are agreeing to our <b>Terms and Services</b></p>
+        <button class="claim">Claim your free trial</button>
+        <span>By clicking the button, you are agreeing to our <b>Terms and Services</b></span>
       </form>
     </div>
   </main>
+
   <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
